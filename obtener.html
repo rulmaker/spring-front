@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+    <!-- Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+        
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .imagen{
+      height: 5rem;
+      max-width: 100%;
+     
+  }
+    </style>
+   
+   
+  </head>
+  <body>
+   
+    
+     
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 mt-5">
+              
+              <div class="box">
+                <h1>Administrar productos</h1>
+               
+              </div>
+              
+              <div class="row products mt-4" id="productos">
+
+
+                <table id="tabla">
+                  <tr>
+                    <th>Id_cohorte</th>
+                    <th>Ciudad</th>
+                    <th>Numero de cohorte</th>
+                    <th>Eliminar</th>
+                    <th>Editar</th>
+                  </tr>
+                  
+                  
+                </table>
+
+
+
+                              <!-- Modal -->
+                <div class="modal fade modal-editar" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Editar Producto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div id="mostrar">
+                          <table id="tablaModal">
+                            <tr>
+                                <th>Id_cohorte</th>
+                                <th>Ciudad</th>
+                                <th>Numero de cohorte</th>
+                              
+                            </tr>
+                          </table>
+                          <div class="fomulario">
+                            <form action="" id="formulario">
+                              <div class="form-group">
+                                <label for="ciudad">Ciudad</label>
+                                <input
+                                  id="ciudad"
+                                  type="text"
+                                  placeholder="Ciudad"
+                                  class="form-control"
+                                  name="ciudad"
+                                />
+                              </div>
+                              <div class="form-group">
+                                <label for="numero">Número</label>
+                                <input
+                                  id="numero"
+                                  name="numero"
+                                  type="text"
+                                  placeholder="Número de cohorte"
+                                  class="form-control"
+                                />
+                              </div>
+                              
+                              <button type="submit" class="btn btn-primary" onclick="$('.modal-editar').one('hidden.bs.modal', function() { $('.modal-exit').modal('show'); }).modal('hide');" class="modal-enlace">Guardar cambios</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="borrarFila()">Cerrar</button>
+                       
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+            <!-- Modal bootstrap ends -->
+
+
+            <!-- Modal  2-->
+            <div class="modal fade modal-exit" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Editar Producto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div id="mostrar">
+                      
+                      <h3>El producto se actualizó con éxito</h3>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="borrarFila(), location.reload();">Cerrar</button>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal 2 ends -->
+
+
+              </div>
+              
+            </div>
+            <!-- /.col-lg-9-->
+          </div>
+        </div>
+
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+   
+
+    <script src="js/obtener.js"></script>
+
+
+  </body>
+</html>

@@ -164,7 +164,7 @@ $form.addEventListener('submit', e => {
 
     fetch('http://localhost:8080/api/cohorte', {
         // mode: 'no-cors',
-        method: 'POST',
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },

@@ -112,6 +112,10 @@ function mostrar(elemento) {
 
 
 
+function borrarFila() {
+    document.getElementById('tablaModal').deleteRow(1);
+    playera.length = 0;
+}
 
 
 
